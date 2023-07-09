@@ -1,6 +1,7 @@
 import 'package:examplenumbertrivia/core/network/network_info.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
+import 'package:mockito/annotations.dart';
 // import 'package:mockito/annotations.dart';
 import 'package:mockito/mockito.dart';
 
@@ -11,6 +12,10 @@ class MockDataConnectionChecker extends Mock implements InternetConnectionChecke
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
+
+@GenerateMocks([
+  MockDataConnectionChecker, MockNetworkInfo
+])
 void main() {
   group('DataConnectionChecker - ', () {
     late MockMockDataConnectionChecker mockDataConnectionChecker;

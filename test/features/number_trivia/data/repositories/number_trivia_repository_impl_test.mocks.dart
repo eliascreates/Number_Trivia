@@ -43,6 +43,16 @@ class MockMockNumberTriviaLocalDataSource extends _i1.Mock
   }
 
   @override
+  _i4.Future<void> cacheNumberTrivia(_i2.NumberTriviaModel? triviaToCache) =>
+      (super.noSuchMethod(
+        Invocation.method(
+          #cacheNumberTrivia,
+          [triviaToCache],
+        ),
+        returnValue: _i4.Future<void>.value(),
+        returnValueForMissingStub: _i4.Future<void>.value(),
+      ) as _i4.Future<void>);
+  @override
   _i4.Future<_i2.NumberTriviaModel> getLastNumberTrivia() =>
       (super.noSuchMethod(
         Invocation.method(
@@ -58,16 +68,6 @@ class MockMockNumberTriviaLocalDataSource extends _i1.Mock
           ),
         )),
       ) as _i4.Future<_i2.NumberTriviaModel>);
-  @override
-  _i4.Future<void> cacheNumberTrivia(_i2.NumberTriviaModel? triviaToCache) =>
-      (super.noSuchMethod(
-        Invocation.method(
-          #cacheNumberTrivia,
-          [triviaToCache],
-        ),
-        returnValue: _i4.Future<void>.value(),
-        returnValueForMissingStub: _i4.Future<void>.value(),
-      ) as _i4.Future<void>);
 }
 
 /// A class which mocks [MockNumberTriviaRemoteDataSource].

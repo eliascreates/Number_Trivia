@@ -8,6 +8,7 @@ import 'package:examplenumbertrivia/features/number_trivia/data/models/number_tr
 import 'package:examplenumbertrivia/features/number_trivia/data/repositories/number_trivia_repository_impl.dart';
 import 'package:examplenumbertrivia/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/annotations.dart';
 import './number_trivia_repository_impl_test.mocks.dart';
 
 import 'package:mockito/mockito.dart';
@@ -20,6 +21,11 @@ class MockNumberTriviaLocalDataSource extends Mock
 
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
+@GenerateMocks([
+  MockNumberTriviaLocalDataSource,
+  MockNumberTriviaRemoteDataSource,
+  MockNetworkInfo
+])
 void main() {
   late NumberTriviaRepositoryImpl repository;
   late MockMockNumberTriviaRemoteDataSource mockNumberTriviaRemoteDataSource;
