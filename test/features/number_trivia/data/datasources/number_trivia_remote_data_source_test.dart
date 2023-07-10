@@ -13,7 +13,7 @@ import '../../../../fixtures/fixture_reader.dart';
 
 class MockHttpClient extends Mock implements http.Client {}
 
-@GenerateMocks([MockHttpClient])
+@GenerateMocks([http.Client])
 void main() {
   late NumberTriviaRemoteDataSourceImpl dataSource;
   late MockMockHttpClient mockHttpClient;

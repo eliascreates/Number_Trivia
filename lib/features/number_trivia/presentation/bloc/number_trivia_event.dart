@@ -9,11 +9,13 @@ sealed class NumberTriviaEvent extends Equatable {
 }
 
 final class NumberTriviaConcreteFetched extends NumberTriviaEvent {
-  final String number;
-  const NumberTriviaConcreteFetched({required this.number});
+  final String numberString;
+  const NumberTriviaConcreteFetched({required this.numberString});
 
   @override
-  List<Object> get props => [number];
+  List<Object> get props => [numberString];
 }
 
-final class NumberTriviaRandomFetched extends NumberTriviaEvent {}
+final class NumberTriviaRandomFetched extends NumberTriviaEvent {
+  const NumberTriviaRandomFetched();
+}

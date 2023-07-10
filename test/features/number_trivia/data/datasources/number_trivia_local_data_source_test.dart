@@ -14,7 +14,7 @@ import '../../../../fixtures/fixture_reader.dart';
 
 class MockSharedPreferences extends Mock implements SharedPreferences {}
 
-@GenerateMocks([MockSharedPreferences])
+@GenerateMocks([SharedPreferences])
 void main() {
   late MockMockSharedPreferences mockSharedPreferences;
   late NumberTriviaLocalDataSourceImpl dataSource;

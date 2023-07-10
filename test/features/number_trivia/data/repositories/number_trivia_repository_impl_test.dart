@@ -22,9 +22,9 @@ class MockNumberTriviaLocalDataSource extends Mock
 class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 @GenerateMocks([
-  MockNumberTriviaLocalDataSource,
-  MockNumberTriviaRemoteDataSource,
-  MockNetworkInfo
+  NumberTriviaLocalDataSource,
+  NumberTriviaRemoteDataSource,
+  NetworkInfo
 ])
 void main() {
   late NumberTriviaRepositoryImpl repository;

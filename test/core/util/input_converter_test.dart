@@ -29,7 +29,7 @@ void main() {
       final result = inputConverter.stringtoUnsignedInt(str);
 
       //Assert
-      expect(result, Left(InvalidInputFailure()));
+      expect(result, const Left(InvalidInputFailure()));
     });
     test(
         'should return InvalidInputFailure when the string represents a negative integer ',
@@ -40,7 +40,7 @@ void main() {
       final result = inputConverter.stringtoUnsignedInt(str);
 
       //Assert
-      expect(result, Left(InvalidInputFailure()));
+      expect(result, const Left(InvalidInputFailure()));
     });
   });
 }

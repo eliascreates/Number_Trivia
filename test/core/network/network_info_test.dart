@@ -14,7 +14,7 @@ class MockNetworkInfo extends Mock implements NetworkInfo {}
 
 
 @GenerateMocks([
-  MockDataConnectionChecker, MockNetworkInfo
+  InternetConnectionChecker, NetworkInfo
 ])
 void main() {
   group('DataConnectionChecker - ', () {
