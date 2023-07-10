@@ -12,7 +12,9 @@ class NumberTriviaInitial extends NumberTriviaState {
   const NumberTriviaInitial();
 }
 
-class NumberTriviaLoadInProgress extends NumberTriviaState {}
+class NumberTriviaLoadInProgress extends NumberTriviaState {
+  const NumberTriviaLoadInProgress();
+}
 
 class NumberTriviaLoadSuccess extends NumberTriviaState {
   final NumberTrivia numberTrivia;

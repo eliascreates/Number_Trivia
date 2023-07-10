@@ -119,7 +119,7 @@ void main() {
 
         verify(mockNumberTriviaRemoteDataSource
             .getConcreteNumberTrivia(testNumber));
-        expect(result, equals(Left(ServerFailure())));
+        expect(result, equals(const Left(ServerFailure())));
       });
     });
 
@@ -152,7 +152,7 @@ void main() {
         verify(mockNumberTriviaLocalDataSource.getLastNumberTrivia());
         verifyZeroInteractions(mockNumberTriviaRemoteDataSource);
 
-        expect(result, equals(Left(CacheFailure())));
+        expect(result, equals(const Left(CacheFailure())));
       });
     });
   });
@@ -225,7 +225,7 @@ void main() {
         verifyZeroInteractions(mockNumberTriviaLocalDataSource);
 
         verify(mockNumberTriviaRemoteDataSource.getRandomNumberTrivia());
-        expect(result, equals(Left(ServerFailure())));
+        expect(result, equals(const Left(ServerFailure())));
       });
     });
 
@@ -258,7 +258,7 @@ void main() {
         verify(mockNumberTriviaLocalDataSource.getLastNumberTrivia());
         verifyZeroInteractions(mockNumberTriviaRemoteDataSource);
 
-        expect(result, equals(Left(CacheFailure())));
+        expect(result, equals(const Left(CacheFailure())));
       });
     });
   });

@@ -49,7 +49,7 @@ class NumberTriviaRepositoryImpl extends NumberTriviaRepository {
         numberTriviaLocalDataSource.cacheNumberTrivia(remoteNumberTrivia);
         return Right(remoteNumberTrivia);
       } on ServerException {
-        return Left(ServerFailure());
+        return const Left(ServerFailure());
       }
     } else {
       try {
@@ -58,7 +58,7 @@ class NumberTriviaRepositoryImpl extends NumberTriviaRepository {
 
         return Right(localNumberTrivia);
       } on CacheException {
-        return Left(CacheFailure());
+        return const Left(CacheFailure());
       }
     }
   }

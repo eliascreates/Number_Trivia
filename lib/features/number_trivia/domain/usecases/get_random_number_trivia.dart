@@ -4,6 +4,7 @@ import 'package:examplenumbertrivia/core/usecases/usecase.dart';
 import 'package:examplenumbertrivia/features/number_trivia/domain/entities/number_trivia.dart';
 import 'package:examplenumbertrivia/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 
+///Type: [Future<Either<Failure, NumberTrivia>> Function(NoParams())]
 class GetRandomNumberTrivia implements Usecase<NumberTrivia, NoParams> {
   const GetRandomNumberTrivia(this.numberTriviaRepository);
 

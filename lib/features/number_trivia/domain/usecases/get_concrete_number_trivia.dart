@@ -6,6 +6,8 @@ import '../../../../core/error/failures.dart';
 import '../repositories/number_trivia_repository.dart';
 import '../entities/number_trivia.dart';
 
+
+///Type: [Future<Either<Failure, NumberTrivia>> Function(Params({required int number}))]
 class GetConcreteNumberTrivia implements Usecase<NumberTrivia, Params> {
   const GetConcreteNumberTrivia(this.repository);
 
