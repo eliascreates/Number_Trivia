@@ -27,6 +27,8 @@ dependencies:
   #Caching Data locally
   shared_preferences: ^2.2.0
 
+  #Service Locator
+  get_it: ^7.6.0
   
   internet_connection_checker: ^1.0.0+1
   http: ^1.1.0
