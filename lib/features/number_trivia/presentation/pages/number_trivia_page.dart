@@ -44,4 +44,3 @@ class NumberTriviaView extends StatelessWidget {
     );
   }
 }
-

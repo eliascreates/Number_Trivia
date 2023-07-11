@@ -28,7 +28,6 @@ class TopTriviaDescription extends StatelessWidget {
             } else if (state is NumberTriviaInitial) {
               return const MessageDisplay(message: Strings.newMessage);
             }
-
             return const Text("Welcome");
           },
         ),
