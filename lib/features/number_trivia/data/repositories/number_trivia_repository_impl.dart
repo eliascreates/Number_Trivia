@@ -42,7 +42,8 @@ class NumberTriviaRepositoryImpl extends NumberTriviaRepository {
   Future<Either<Failure, NumberTrivia>> _getTrivia(
     _ConcreteOrRandomChooser getConcreteOrRandomTrivia,
   ) async {
-    if (await networkInfo.isConnected) {
+    final hasInternet = await networkInfo.isConnected;
+    if (hasInternet) {
       try {
         final remoteNumberTrivia = await getConcreteOrRandomTrivia();
 

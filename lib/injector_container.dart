@@ -44,10 +44,6 @@ Future<void> init() async {
 
   //? EXTERNAL
 
-  //TODO: Check the get_it documentation for this
-  // sl.registerLazySingletonAsync<SharedPreferences>(
-  //     () async => await SharedPreferences.getInstance());
-
   final sharedPreferences = await SharedPreferences.getInstance();
 
   sl.registerLazySingleton<SharedPreferences>(() => sharedPreferences);

@@ -13,7 +13,7 @@ class MessageDisplay extends StatelessWidget {
       child: Text(
         message,
         style: textTheme.bodyMedium,
-        textScaleFactor: 1.5,
+        textScaleFactor: KValues.textScaleFactor,
         textAlign: TextAlign.center,
       ),
     );

@@ -1,3 +1,5 @@
+import 'package:examplenumbertrivia/core/constants/k_values.dart';
+import 'package:examplenumbertrivia/core/constants/strings.dart';
 import 'package:examplenumbertrivia/core/util/input_converter.dart';
 import 'package:examplenumbertrivia/features/number_trivia/domain/usecases/get_concrete_number_trivia.dart';
 import 'package:examplenumbertrivia/features/number_trivia/domain/usecases/get_random_number_trivia.dart';
@@ -14,7 +16,7 @@ class NumberTriviaPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Number Trivia'),
+        title: const Text(Strings.triviaBarTitle),
       ),
       body: BlocProvider<NumberTriviaBloc>(
         create: (context) => NumberTriviaBloc(
@@ -22,7 +24,10 @@ class NumberTriviaPage extends StatelessWidget {
           random: sl<GetRandomNumberTrivia>(),
           inputConverter: sl<InputConverter>(),
         ),
-        child: const NumberTriviaView(),
+        child: GestureDetector(
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: const NumberTriviaView(),
+        ),
       ),
     );
   }
@@ -36,10 +41,10 @@ class NumberTriviaView extends StatelessWidget {
     return const Column(
       children: [
         //* TOP HALF
-        /* const  */ Expanded(flex: 2, child: TopTriviaDescription()),
-        /* const  */ SizedBox(height: 20),
+        Expanded(flex: 2, child: TopTriviaDescription()),
+        SizedBox(height: KValues.defaultPadding),
         //* BOTTOM HALF
-        /* const  */ Expanded(flex: 1, child: BottomTriviaInteractions()),
+        Expanded(flex: 1, child: BottomTriviaInteractions()),
       ],
     );
   }

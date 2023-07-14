@@ -20,6 +20,12 @@ class NumberTriviaLoadSuccess extends NumberTriviaState {
   final NumberTrivia numberTrivia;
   const NumberTriviaLoadSuccess({required this.numberTrivia});
 
+  NumberTriviaLoadSuccess copyWith({NumberTrivia? numberTrivia}) {
+    return NumberTriviaLoadSuccess(
+      numberTrivia: numberTrivia ?? this.numberTrivia,
+    );
+  }
+
   @override
   List<Object> get props => [numberTrivia];
 }
@@ -27,6 +33,12 @@ class NumberTriviaLoadSuccess extends NumberTriviaState {
 class NumberTriviaLoadFailure extends NumberTriviaState {
   final String errorMessage;
   const NumberTriviaLoadFailure({required this.errorMessage});
+
+  NumberTriviaLoadFailure copyWith({String? errorMessage}) {
+    return NumberTriviaLoadFailure(
+      errorMessage: errorMessage ?? this.errorMessage,
+    );
+  }
 
   @override
   List<Object> get props => [errorMessage];

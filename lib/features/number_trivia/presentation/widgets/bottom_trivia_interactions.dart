@@ -1,4 +1,10 @@
+import 'package:examplenumbertrivia/core/constants/k_values.dart';
+import 'package:examplenumbertrivia/features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+part 'trivia_search_submit_button.dart';
+part 'trivia_random_button.dart';
 
 class BottomTriviaInteractions extends StatefulWidget {
   const BottomTriviaInteractions({super.key});
@@ -27,9 +33,9 @@ class _BottomTriviaInteractionsState extends State<BottomTriviaInteractions> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20).copyWith(bottom: 0),
+      padding: const EdgeInsets.all(KValues.defaultPadding).copyWith(bottom: 0),
       alignment: Alignment.topCenter,
-      color: Colors.green.shade300,
+      color: Theme.of(context).primaryColor.withOpacity(0.1),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
@@ -37,18 +43,37 @@ class _BottomTriviaInteractionsState extends State<BottomTriviaInteractions> {
             controller: _textEditingController,
             keyboardType: TextInputType.number,
             onChanged: (value) => numberString = value,
+            onSubmitted: (text) => context
+                .read<NumberTriviaBloc>()
+                .add(NumberTriviaConcreteFetched(numberString: text)),
             decoration: InputDecoration(
-              border:
-                  OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+              border: OutlineInputBorder(
+                  borderRadius:
+                      BorderRadius.circular(KValues.defaultPadding / 2)),
               hintText: 'Enter a number',
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: KValues.defaultPadding),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Expanded(child: _TriviaSearchSubmitButton(text: numberString)),
-              const SizedBox(width: 20),
+              Expanded(
+                child: _TriviaSearchSubmitButton(
+                  onPress: () {
+                    _textEditingController.clear();
+                    FocusManager.instance.primaryFocus
+                        ?.unfocus(); //Drops the keyboard
+                    if (numberString.isNotEmpty) {
+                      context.read<NumberTriviaBloc>().add(
+                            NumberTriviaConcreteFetched(
+                                numberString: numberString),
+                          );
+                    }
+                    numberString = '';
+                  },
+                ),
+              ),
+              const SizedBox(width: KValues.defaultPadding),
               const Expanded(
                 child: _TriviaRandomButton(),
               )
@@ -56,45 +81,6 @@ class _BottomTriviaInteractionsState extends State<BottomTriviaInteractions> {
           )
         ],
       ),
-    );
-  }
-}
-
-class _TriviaRandomButton extends StatelessWidget {
-  const _TriviaRandomButton();
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      key: const Key('bottomTriviaInteractions_getRandom_elevatedButton'),
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-      icon: const Icon(Icons.shuffle),
-      label: const Text('Random'),
-    );
-  }
-}
-
-class _TriviaSearchSubmitButton extends StatelessWidget {
-  const _TriviaSearchSubmitButton({required this.text});
-
-  final String text;
-
-  @override
-  Widget build(BuildContext context) {
-    return ElevatedButton(
-      key: const Key('bottomTriviaInteractions_getConcrete_elevatedButton'),
-      onPressed: () {},
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10),
-        ),
-      ),
-      child: const Text('Search'),
     );
   }
 }
