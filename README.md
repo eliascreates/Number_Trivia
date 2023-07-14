@@ -1,21 +1,22 @@
 # examplenumbertrivia 🔬
 
-Built using the popular Flutter framework. Outsightful quotes are quite insightful.
+Built using the popular Flutter framework. Number Trivia is an app that shows you different meanings for every positive number out there.
 
 ### Some concepts that were utilised in the development of this app
 - Bloc State management
 - Complete Clean Architecture as introduced by Uncle Bob (Robert C. Martin)
+- Unit Testing. 100% Test Coverage
 - SOLID Principles
 - RESTful API: Number Trivia Api
 - Modularization: Refactoring Widgets
 - Json serialization: Decoding Json strings into models
+- Data Sources: Remote & Local Data Sources
 - Event-driven programming
 
 *****
 ## Screenshots
 \
-<img src="./zreadmefiles/outsightful_quotes.png" width="650px" title="Light mode vs dark mode of an app">
-<img src="./zreadmefiles/outsightful_quotes_gif.gif" width="650px" title="Light mode vs dark mode of an app">
+<img src="./screenshots/number_trivia_gif.gif" width="650px" title="Number Trivia">
 ****
 ## Getting Started
 
