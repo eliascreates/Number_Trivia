@@ -17,7 +17,9 @@ Built using the popular Flutter framework. Number Trivia is an app that shows yo
 ## Screenshots
 \
 <img src="./screenshots/number_trivia_gif.gif" width="650px" title="Number Trivia">
-****
+<img src="./screenshots/number_trivia_test.png" width="650px" title="Number Trivia">
+<img src="./screenshots/number_trivia_infographic_png.png" width="650px" title="Number Trivia">
+
 ## Getting Started
 
 If you want learn how to build Flutter applications.
